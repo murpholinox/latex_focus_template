@@ -39,7 +39,9 @@
 \usepackage[T1]{fontenc} % Set up font encoding for spanish
 \usepackage[spanish, mexico]{babel} % Translation of environments
 \usepackage{dirtytalk} % Allows double quotes with \say{text}
-
+\usepackage{graphicx} % To insert images
+\usepackage{siunitx}
+\graphicspath{ {Images/}}
 
 %----------------------------------------------------------------------------------------
 %	 TITLE SLIDE
@@ -74,24 +76,44 @@
 \section{Introducción}
 
 \begin{frame}{Cristalografía de rayos X}
-Actualmente la cristalografía de rayos X (CRX), es el principal método con el cual se puede obtener detalle atómico de la proteína de interés. De 163141 estructuras depositadas en la base de datos de proteínas (PDB)\footnote{\url{https://www.rcsb.org/}.}, 145083 se han determinado gracias a este método. Esto representa el 88.93 \% del total \footnote{A 25 de abril 2020.}.
+Actualmente la cristalografía de rayos X (CRX), es el principal método con el cual se puede obtener detalle atómico de la proteína de interés. De 163141 estructuras depositadas en la base de datos de proteínas (PDB)\footnote{\url{https://www.rcsb.org/}.}, 145083 se han determinado gracias a este método\footnote{A 25 de abril del 2020.}. Esto representa el 88.93 \% del total.
 \end{frame}
 
-\begin{frame}{Cristalografía de rayos X}
-El método 	
-	Algo de texto por aquí y por allá.
+\begin{frame}{El experimento de CRX}
+En breve, el experimento de CRX consiste en:
+
+\begin{enumerate}
+	\item Incidir \alert{rayos X} sobre el cristal de proteína. 
+	\item Obtener el patrón de difracción. 
+	\item Rotar el cristal en cierto eje. 
+	\item Repetir $n$ veces.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Fuentes de rayos X}
+La fuente de rayos X más común para realizar un experimento de CRX, es la radiación sincrotrón. De 145083 estructuras determinadas por la CRX, 114781 fueron determinadas en un sincrotrón\footnote{A 25 de abril del 2020}. Esto representa el 79.11 \%. 
 \end{frame}
 
 \begin{frame}{Daño por radiación}
-	Una de las limitantes de la CRX es el daño por radiación.
+Una de las limitantes de la CRX, es el daño por radiación (DPR). 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{teng.png}
+    \caption{Cristal de lisozima expuesto a \SI{120}{\kilo\gray} (izquierda) y \SI{16.7}{\mega\gray} (derecha). Imagen tomada de \cite{Teng2000}.}
+    \label{fig:mesh1}
+\end{figure}
+
 \end{frame}
 
-\begin{frame}{Título x}
-	Algo de texto por aquí y por allá.
-\end{frame}
-
-\begin{frame}{Título x}
-	Algo de texto por aquí y por allá.
+\begin{frame}{Consecuencias del daño por radiación}
+Notable en las métricas de calidad de los datos... 
+\begin{enumerate}
+	\item Cambio en el volumen de la celda unitaria.
+	\item Pérdida de datos\footnote{Número de reflexiones e intensidad de las mismas. Iniciando con aquellos en fajas de alta resolución.}
+	\item Aumento del factor $B$. 
+\end{enumerate}
 \end{frame}
 
 \begin{frame}{Título x}
@@ -158,7 +180,7 @@ El método
 
 \begin{frame}{Referencias}
 	%\nocite{*} % Display all references regardless of if they were cited
-	\bibliography{example.bib}
+	\bibliography{bib.bib}
 	\bibliographystyle{plain}
 \end{frame}
 
