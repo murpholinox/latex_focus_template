@@ -40,7 +40,8 @@
 \usepackage[spanish, mexico]{babel} % Translation of environments
 \usepackage{dirtytalk} % Allows double quotes with \say{text}
 \usepackage{graphicx} % To insert images
-\usepackage{siunitx}
+\usepackage{siunitx} % Sistema internacional de unidades
+\usepackage[version=4]{mhchem} % Ecuaciones químicas.
 \graphicspath{ {Images/}}
 
 %----------------------------------------------------------------------------------------
@@ -76,10 +77,13 @@
 \section{Introducción}
 
 \begin{frame}{Cristalografía de rayos X}
+
 Actualmente la cristalografía de rayos X (CRX), es el principal método con el cual se puede obtener detalle atómico de la proteína de interés. De 163141 estructuras depositadas en la base de datos de proteínas (PDB)\footnote{\url{https://www.rcsb.org/}.}, 145083 se han determinado gracias a este método\footnote{A 25 de abril del 2020.}. Esto representa el 88.93 \% del total.
+
 \end{frame}
 
 \begin{frame}{El experimento de CRX}
+
 En breve, el experimento de CRX consiste en:
 
 \begin{enumerate}
@@ -92,32 +96,76 @@ En breve, el experimento de CRX consiste en:
 \end{frame}
 
 \begin{frame}{Fuentes de rayos X}
+
 La fuente de rayos X más común para realizar un experimento de CRX, es la radiación sincrotrón. De 145083 estructuras determinadas por la CRX, 114781 fueron determinadas en un sincrotrón\footnote{A 25 de abril del 2020}. Esto representa el 79.11 \%. 
+
 \end{frame}
 
 \begin{frame}{Daño por radiación}
-Una de las limitantes de la CRX, es el daño por radiación (DPR). 
+
+Una de las limitantes de la CRX, es el daño por radiación. 
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{teng.png}
-    \caption{Cristal de lisozima expuesto a \SI{120}{\kilo\gray} (izquierda) y \SI{16.7}{\mega\gray} (derecha). Imagen tomada de \cite{Teng2000}.}
+    \caption{Cristal de lisozima y su patrón de difracción después de una dosis de radiación de \SI{120}{\kilo\gray} (izquierda) y \SI{16.7}{\mega\gray} (derecha). Imagen tomada de \cite{Teng2000}.}
     \label{fig:mesh1}
 \end{figure}
 
 \end{frame}
 
-\begin{frame}{Consecuencias del daño por radiación}
-Notable en las métricas de calidad de los datos... 
-\begin{enumerate}
-	\item Cambio en el volumen de la celda unitaria.
-	\item Pérdida de datos\footnote{Número de reflexiones e intensidad de las mismas. Iniciando con aquellos en fajas de alta resolución.}
-	\item Aumento del factor $B$. 
-\end{enumerate}
+\begin{frame}{Daño global}
+
+El daño global se nota en la pérdida de reflexiones y su disminución en intensidad. Después de procesar los datos se nota: en el cambio del volumen de la celda unitaria, en el aumento del factor de escala y/o en las métricas que ayudan a evaluar la calidad de los datos o de la relación entre datos y modelo, pues tienden a empeorar.
+
 \end{frame}
 
-\begin{frame}{Título x}
-	Algo de texto por aquí y por allá.
+\begin{frame}{Daño específico}
+El daño por radiación sobre ciertos residuos de aminoácidos. No ocurre de manera idéntica. Modelo estructural \emph{perturbado}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{prueba3.png}
+	\caption{Diferencia de densidad electrónica para un cristal de lisozima entre dos colectas de datos. Estructuras y datos de \cite{Nanao2005}.}
+	\label{fig:mesh1}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\begin{alertblock}{Nada}
+		En el peor de los casos, es imposible obtener un modelo.
+	\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{Crioprotección}
+Una de las primeras estrategias para minimizar el daño por radiación fue realizar el experimento de difracción a bajas temperaturas.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{garman2003.png}
+	\caption{Adopción de la crioprotección. Imagen tomada de \cite{Garman2003}.}
+	\label{fig:mesh1}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Radioprotectores}
+
+Interacción con los radicales libres antes que la proteína.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{delamora2011.png}
+	\caption{Radioprotectores en cristal de lisozima nativo (a), con ácido ascórbico (b) y con nitrato de sodio (c). Imagen tomada de \cite{DeLaMora2011}.}
+	\label{fig:mesh1}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{To scavenge or not to scavenge}
+A comparación de la crioprotección, el uso de radioprotectores todavía no se ha adoptado como parte de la rutina del experimento de CRX. Al menos dos artículos científicos han debatido sobre este punto \cite{Nowak2009,Allan2013}.    
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -126,12 +174,18 @@ Notable en las métricas de calidad de los datos...
 
 \section{Antecedentes}
 
-\begin{frame}{Título x}
-	Algo de texto por aquí y por allá.
+\begin{frame}{pH}
+
+El principal radical libre generado por la radiación, es el electrón solvatado, el cual se encuentra en un equilibrio ácido base.
+\begin{equation*}
+\ce{e^{-}_{solv.} + H^{+} <=> H^{.}}
+\end{equation*}
+En una solución ácida el electrón solvatado se convierte en \ce{H^.} y esta especia se recombina generando \ce{H2}, el cual se acumula dentro del cristal macromolecular \cite{Meents2010}. 
+En este caso el ion hidronio funciona como radioprotector. 
 \end{frame}
 
-\begin{frame}{Título x}
-	Algo de texto por aquí y por allá.
+\begin{frame}{pH}
+En mi tesis de maestría se investigó el efecto del pH en cristales de lisozima: el cristal con el pH más ácido (3.7) presentó mayor daño por radiación que el cristal con el pH más básico (5.7).
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -140,8 +194,8 @@ Notable en las métricas de calidad de los datos...
 
 \section{Materiales y métodos}
 
-\begin{frame}{Título x}
-	Algo de texto por aquí y por allá.
+\begin{frame}{Proteínas}
+
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -178,10 +232,11 @@ Notable en las métricas de calidad de los datos...
 
 \appendix
 
-\begin{frame}{Referencias}
+\begin{frame}[allowframebreaks]{Referencias}
+	
 	%\nocite{*} % Display all references regardless of if they were cited
 	\bibliography{bib.bib}
-	\bibliographystyle{plain}
+	\bibliographystyle{unsrt}
 \end{frame}
 
 %------------------------------------------------
