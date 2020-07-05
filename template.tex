@@ -37,6 +37,7 @@
 \usepackage{siunitx} % Sistema internacional de unidades
 \usepackage[version=4]{mhchem} % Ecuaciones químicas.
 \usepackage{xcolor} % Da color a tu vida.
+%\usepackage{natbib}
 \usepackage{hyperref} % URLS
 \hypersetup{
     colorlinks=true,
@@ -53,7 +54,7 @@
 \author{Francisco Murphy Pérez \\ Dr. Enrique Rudiño Piñera}
 %\titlegraphic{\includegraphics[scale=1.25]{Images/focuslogo.pdf}} % Optional title page image, comment this line to remove it
 \institute{Instituto de Biotecnología \\ Universidad Nacional Autónoma de México}
-\date{25 03 2020}
+\date{04 07 2020}
 %----------------------------------------------------------------------------------------
 \begin{document}
 %----------------------------------------------------------------------------------------
@@ -169,7 +170,7 @@ El \ce{e^{-}_{solv.}} puede difundir del solvente a la proteína cristalizada y 
 %El daño por radiación sobre ciertos residuos de aminoácido. No ocurre de manera idéntica. Modelo estructural \emph{perturbado}.
  \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{diff.png}
+  \includegraphics[width=0.8\textwidth]{diff2.png}
   \caption{Diferencia de densidad electrónica entre colectas de datos. }
   \label{fig:nanao2005}
  \end{figure}
@@ -181,13 +182,14 @@ La pérdida de reflexiones y su disminución en intensidad en los patrones de di
  \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{teng.png}
-  \caption{Cristal de lisozima y su patrón de difracción después de una dosis de radiación de \SI{120}{\kilo\gray} (izquierda) y \SI{16.7}{\mega\gray} (derecha). Fuente: \cite{Teng2000}. Información sobre \hyperlink{backup:grays}{\beamergotobutton{Grays}}. }
+  \caption{Cristal de lisozima y su patrón de difracción después de una dosis de radiación de \SI{120}{\kilo\gray} (izquierda) y \SI{16.7}{\mega\gray} (derecha). Fuente: \cite{Teng2000}. %Información sobre \hyperlink{backup:grays}{\beamergotobutton{Grays}}. 
+}
   \label{fig:teng2000}
  \end{figure}
 \end{frame}
 %----------------------------------------------------------------------------------------
 \begin{frame}{Consecuencias: daño global}
-Después de procesar los patrones de difracción, el daño por radiación se nota en:
+El daño global:
  \begin{itemize}
   \item Cambio del volumen de la celda unitaria
   \item Aumento del factor de escala
@@ -298,6 +300,24 @@ La resolución es un indicador de la calidad del cristal macromolecular; entre m
  \includegraphics[width=0.7\textwidth]{Images/hist_pH_by_gpo_P00698}
  \caption{Ejemplo de histograma de pH por grupo espacial.}
  \end{figure} 
+\end{frame}
+%----------------------------------------------------------------------------------------
+\begin{frame}{Proteínas: seleccionadas}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		Número & Código & Intervalo       & Nombre                              \\ \midrule
+		1      & P00918 & 6               & Anhidrasa carbónica                 \\
+		2      & P00698 & 5.5             & Lisozima                            \\
+		3      & P00760 & 6               & Tripsina                            \\
+		4      & P02766 & 5               & Transtiretina                       \\
+		5      & P42212 & 6               & Proteína verde fluorescente         \\
+\bottomrule
+	\end{tabular}
+	\caption{Proteínas que cristalizan en un intervalo amplio de pH.}
+	\label{tab:list}
+\end{table}
 \end{frame}
 %----------------------------------------------------------------------------------------
 \begin{frame}{Colecta de datos}
