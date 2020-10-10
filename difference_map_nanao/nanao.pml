@@ -98,3 +98,31 @@ cmd.enable('c2-c1_pos')
 cmd.enable('c2-c1_neg')
 cmd.enable('2blx')
 png diff.png, dpi=300, width=20cm, ray=1
+#
+load 2blx-coot-0.pdb, mod
+set grid_slot, 1, mod
+hide cartoon
+show sticks, mod
+set_view (\
+    -0.755389750,    0.477396697,    0.448856562,\
+     0.654637158,    0.579959989,    0.484864801,\
+    -0.028846432,    0.660100043,   -0.750620365,\
+     0.000007923,   -0.000178033,  -22.906740189,\
+     6.051351070,   10.364200592,   25.959999084,\
+    20.018686295,   25.801801682,   20.000000000 )
+symexp sym, mod, (mod), 5
+cmd.disable('sym000000-1')
+cmd.disable('sym030000-1')
+cmd.disable('sym070000-1')
+cmd.disable('sym01000000')
+cmd.disable('sym03000000')
+cmd.disable('sym04000000')
+cmd.disable('sym00000001')
+cmd.disable('sym01000001')
+cmd.disable('sym05000001')
+cmd.disable('sym04010000')
+cmd.disable('c2-c1_pos')
+cmd.disable('c2-c1_neg')
+cmd.disable('2blx')
+set grid_slot, 1, sym05000000
+png correcto.png, dpi=300, width=20cm, ray=1

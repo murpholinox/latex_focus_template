@@ -36,8 +36,18 @@
 \usepackage{graphicx} % To insert images
 \usepackage{siunitx} % Sistema internacional de unidades
 \usepackage[version=4]{mhchem} % Ecuaciones químicas.
+\usepackage[backend=biber, style=authoryear, doi=false,isbn=false,url=false, giveninits=true]{biblatex}
+\setbeamertemplate{bibliography item}{}
+\usepackage{xpatch}
+
+\xpatchbibmacro{name:andothers}{%
+	\bibstring{andothers}%
+}{%
+	\bibstring[\emph]{andothers}%
+}{}{}
+
+\renewbibmacro{in:}{}
 \usepackage{xcolor} % Da color a tu vida.
-%\usepackage{natbib}
 \usepackage{hyperref} % URLS
 \hypersetup{
     colorlinks=true,
@@ -385,10 +395,12 @@ Contexto:
 \end{table}
 \end{frame}
 %----------------------------------------------------------------------------------------
-\begin{frame}[allowframebreaks]{Referencias}
+\begin{frame}[allowframebreaks]
+\frametitle{Referencias}
 	%\nocite{*} % Display all references regardless of if they were cited
-	\bibliography{bib}
-	\bibliographystyle{unsrt}
+	%\bibliography{bib}
+	%\bibliographystyle{plainnat}
+	\printbibliography
 \end{frame}
 %----------------------------------------------------------------------------------------
 \end{document}
